@@ -1,0 +1,19 @@
+Package: ExpGLM
+Type: Package
+Title: Generalized Linear Model for experiment analysis
+Version: 0.1.0
+Authors@R: 
+    person(given = "Alcinei Mistico",
+           family = "Azevedo",
+           role = c("aut", "cre"),
+           email = "alcineimistico@hotmail.com",
+           comment = c(ORCID="0000-0001-5196-0851"))
+Description: Package developed to facilitate the use of generalized linear models in the analysis of experiments (Pacote desenvolvido para facilitar  o uso de modelos lineares generalizados na análise de experimentos).
+Imports: rstudioapi
+License: GPL-3
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 7.1.1
+Language: pt-BR
+NeedsCompilation: no
+Packaged: 2021-07-23 00:44:31 UTC; AlcineiAzevedo
