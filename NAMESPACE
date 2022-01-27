@@ -2,8 +2,11 @@
 
 export(BinomialReg)
 export(setwd_script)
+importFrom(grDevices,hcl.colors)
 importFrom(graphics,lines)
 importFrom(graphics,persp)
+importFrom(magrittr,`%>%`)
+importFrom(plotly,plot_ly)
 importFrom(stats,anova)
 importFrom(stats,binomial)
 importFrom(stats,glm)

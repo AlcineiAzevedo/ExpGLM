@@ -20,6 +20,9 @@
 #' BinomialReg(data=D1,TwoWay=FALSE,Family="probit")
 #' @importFrom graphics lines persp
 #' @importFrom stats anova binomial glm predict
+#' @importFrom grDevices hcl.colors
+#' @importFrom plotly plot_ly
+#' @importFrom magrittr `%>%`
 #' @export
 
 
@@ -107,8 +110,32 @@ BinomialReg=function(data,TwoWay=F,Family ="probit"){
     lines(Predito[,1],(Predito[,2]))
   }
   if(Fatorial==T){
-    persp(x=seq(min(X),max(X),l=20),y=seq(min(Y),max(Y),l=20),matrix(Predito[,3],ncol=20),col = "green3",xlab = colnames(D)[1],ylab = colnames(D)[2],zlab = colnames(D)[3])
-  }
+   # persp(x=,,max(Y),l=20),,col = "green3",xlab = colnames(D)[1],ylab = colnames(D)[2],zlab = colnames(D)[3])
+
+    z=matrix(Predito[,3],ncol=20)
+    xlab=colnames(D)[1]
+    ylab=colnames(D)[2]
+    zlab=colnames(D)[3]
+    cor=hcl.colors(12, "YlOrRd", rev = TRUE)
+main=""
+    fig <-plot_ly(x = seq(min(X),max(X),l=20), y=seq(min(Y),max(Y),l=20),
+                  z = z,type = "surface",colors = cor)
+
+    f <- list(
+      family = "Courier New, monospace",
+      size = 18,
+      color = "#7f7f7f"
+    )
+    fig<- fig  %>%   plotly::layout(title=main,
+                                    scene=list(xaxis = list(title = xlab,titlefont = f),
+                                               yaxis = list(title = ylab,titlefont = f),
+                                               zaxis = list(title = zlab,titlefont = f))
+    )
+
+    print(fig)
+
+
+    }
   colnames(Predito)=colnames(D)
   return(Predito)
 

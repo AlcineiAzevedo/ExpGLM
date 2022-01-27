@@ -9,7 +9,7 @@ Authors@R:
            email = "alcineimistico@hotmail.com",
            comment = c(ORCID="0000-0001-5196-0851"))
 Description: Package developed to facilitate the use of generalized linear models in the analysis of experiments (Pacote desenvolvido para facilitar  o uso de modelos lineares generalizados na análise de experimentos).
-Imports: rstudioapi
+Imports: rstudioapi, magrittr, plotly
 License: GPL-3
 Encoding: UTF-8
 LazyData: false
